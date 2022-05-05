@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cbf_v2'.
 //
-// Model version                  : 3.92
+// Model version                  : 3.93
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed May  4 20:25:57 2022
+// C/C++ source code generated on : Wed May  4 21:33:34 2022
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -182,25 +182,22 @@ void cbf_v2_step(void)
   //   SignalConversion generated from: '<Root>/Bus Selector7'
 
   if (cbf_v2_P.Constant2_Value > cbf_v2_P.Switch_Threshold) {
-    // MinMax: '<Root>/MinMax' incorporates:
+    // MinMax: '<Root>/Doesn't allow nominal to brake harder than -0.5' incorporates:
+    //   MATLABSystem: '<Root>/Get Parameter3'
     //   SignalConversion generated from: '<Root>/Bus Selector7'
 
-    if ((rtb_cmd_accel < cbf_v2_B.In1_o.Data) || rtIsNaN(cbf_v2_B.In1_o.Data)) {
-      value_1 = rtb_cmd_accel;
-    } else {
-      value_1 = cbf_v2_B.In1_o.Data;
+    if ((cbf_v2_B.In1_o.Data > rtb_minmax3015) || rtIsNaN(rtb_minmax3015)) {
+      rtb_minmax3015 = cbf_v2_B.In1_o.Data;
+    }
+
+    // End of MinMax: '<Root>/Doesn't allow nominal to brake harder than -0.5'
+
+    // MinMax: '<Root>/MinMax'
+    if ((rtb_cmd_accel < rtb_minmax3015) || rtIsNaN(rtb_minmax3015)) {
+      rtb_minmax3015 = rtb_cmd_accel;
     }
 
     // End of MinMax: '<Root>/MinMax'
-
-    // MinMax: '<Root>/MinMax1' incorporates:
-    //   MATLABSystem: '<Root>/Get Parameter3'
-
-    if ((value_1 < rtb_minmax3015) || rtIsNaN(rtb_minmax3015)) {
-      rtb_minmax3015 = value_1;
-    }
-
-    // End of MinMax: '<Root>/MinMax1'
   } else {
     rtb_minmax3015 = cbf_v2_B.In1_o.Data;
   }
