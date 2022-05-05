@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cbf_v2'.
 //
-// Model version                  : 3.90
+// Model version                  : 3.92
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed May  4 19:25:39 2022
+// C/C++ source code generated on : Wed May  4 20:25:57 2022
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -38,8 +38,7 @@
 
 // Block signals (default storage)
 struct B_cbf_v2_T {
-  SL_Bus_cbf_v2_geometry_msgs_Twist In1;// '<S18>/In1'
-  SL_Bus_cbf_v2_geometry_msgs_Twist In1_h;// '<S15>/In1'
+  SL_Bus_cbf_v2_geometry_msgs_Twist In1;// '<S15>/In1'
   SL_Bus_cbf_v2_geometry_msgs_Twist In1_p;// '<S14>/In1'
   SL_Bus_cbf_v2_geometry_msgs_Twist BusAssignment2;// '<Root>/Bus Assignment2'
   char_T b_zeroDelimTopic[25];
@@ -48,6 +47,7 @@ struct B_cbf_v2_T {
   real_T value;
   real_T value_c;
   real_T value_k;
+  SL_Bus_cbf_v2_std_msgs_Float64 In1_f;// '<S18>/In1'
   SL_Bus_cbf_v2_std_msgs_Float64 In1_o;// '<S16>/In1'
   SL_Bus_cbf_v2_std_msgs_Float64 In1_m;// '<S13>/In1'
 };
@@ -92,12 +92,6 @@ struct P_cbf_v2_T_ {
   SL_Bus_cbf_v2_geometry_msgs_Twist Constant_Value_pq;// Computed Parameter: Constant_Value_pq
                                                          //  Referenced by: '<S8>/Constant'
 
-  SL_Bus_cbf_v2_geometry_msgs_Twist Out1_Y0_n;// Computed Parameter: Out1_Y0_n
-                                                 //  Referenced by: '<S18>/Out1'
-
-  SL_Bus_cbf_v2_geometry_msgs_Twist Constant_Value_l;// Computed Parameter: Constant_Value_l
-                                                        //  Referenced by: '<S11>/Constant'
-
   SL_Bus_cbf_v2_std_msgs_Bool Out1_Y0_o;// Computed Parameter: Out1_Y0_o
                                            //  Referenced by: '<S17>/Out1'
 
@@ -118,6 +112,12 @@ struct P_cbf_v2_T_ {
 
   SL_Bus_cbf_v2_std_msgs_Float64 Constant_Value_a;// Computed Parameter: Constant_Value_a
                                                      //  Referenced by: '<S9>/Constant'
+
+  SL_Bus_cbf_v2_std_msgs_Float64 Out1_Y0_n;// Computed Parameter: Out1_Y0_n
+                                              //  Referenced by: '<S18>/Out1'
+
+  SL_Bus_cbf_v2_std_msgs_Float64 Constant_Value_l;// Computed Parameter: Constant_Value_l
+                                                     //  Referenced by: '<S11>/Constant'
 
   real_T Constant2_Value;              // Expression: 1.0
                                           //  Referenced by: '<Root>/Constant2'

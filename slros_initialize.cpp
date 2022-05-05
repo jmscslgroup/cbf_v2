@@ -19,7 +19,7 @@ SimulinkSubscriber<std_msgs::Float64, SL_Bus_cbf_v2_std_msgs_Float64> Sub_cbf_v2
 SimulinkSubscriber<std_msgs::Bool, SL_Bus_cbf_v2_std_msgs_Bool> Sub_cbf_v2_481;
 
 // For Block cbf_v2/Subscribe8
-SimulinkSubscriber<geometry_msgs::Twist, SL_Bus_cbf_v2_geometry_msgs_Twist> Sub_cbf_v2_527;
+SimulinkSubscriber<std_msgs::Float64, SL_Bus_cbf_v2_std_msgs_Float64> Sub_cbf_v2_527;
 
 // For Block cbf_v2/Publish1
 SimulinkPublisher<std_msgs::Float64, SL_Bus_cbf_v2_std_msgs_Float64> Pub_cbf_v2_401;

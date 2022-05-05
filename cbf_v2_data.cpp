@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cbf_v2'.
 //
-// Model version                  : 3.90
+// Model version                  : 3.92
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed May  4 19:25:39 2022
+// C/C++ source code generated on : Wed May  4 20:25:57 2022
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -106,40 +106,6 @@ P_cbf_v2_T cbf_v2_P = {
     }                                  // Angular
   },
 
-  // Computed Parameter: Out1_Y0_n
-  //  Referenced by: '<S18>/Out1'
-
-  {
-    {
-      0.0,                             // X
-      0.0,                             // Y
-      0.0                              // Z
-    },                                 // Linear
-
-    {
-      0.0,                             // X
-      0.0,                             // Y
-      0.0                              // Z
-    }                                  // Angular
-  },
-
-  // Computed Parameter: Constant_Value_l
-  //  Referenced by: '<S11>/Constant'
-
-  {
-    {
-      0.0,                             // X
-      0.0,                             // Y
-      0.0                              // Z
-    },                                 // Linear
-
-    {
-      0.0,                             // X
-      0.0,                             // Y
-      0.0                              // Z
-    }                                  // Angular
-  },
-
   // Computed Parameter: Out1_Y0_o
   //  Referenced by: '<S17>/Out1'
 
@@ -184,6 +150,20 @@ P_cbf_v2_T cbf_v2_P = {
 
   // Computed Parameter: Constant_Value_a
   //  Referenced by: '<S9>/Constant'
+
+  {
+    0.0                                // Data
+  },
+
+  // Computed Parameter: Out1_Y0_n
+  //  Referenced by: '<S18>/Out1'
+
+  {
+    0.0                                // Data
+  },
+
+  // Computed Parameter: Constant_Value_l
+  //  Referenced by: '<S11>/Constant'
 
   {
     0.0                                // Data

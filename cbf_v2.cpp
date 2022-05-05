@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cbf_v2'.
 //
-// Model version                  : 3.90
+// Model version                  : 3.92
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed May  4 19:25:39 2022
+// C/C++ source code generated on : Wed May  4 20:25:57 2022
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
@@ -103,7 +103,7 @@ void cbf_v2_step(void)
   //   EnablePort: '<S15>/Enable'
 
   if (b_varargout_1) {
-    cbf_v2_B.In1_h = cbf_v2_B.BusAssignment2;
+    cbf_v2_B.In1 = cbf_v2_B.BusAssignment2;
   }
 
   // End of MATLABSystem: '<S8>/SourceBlock'
@@ -114,13 +114,13 @@ void cbf_v2_step(void)
   // MATLABSystem: '<S11>/SourceBlock' incorporates:
   //   Inport: '<S18>/In1'
 
-  b_varargout_1 = Sub_cbf_v2_527.getLatestMessage(&cbf_v2_B.BusAssignment2);
+  b_varargout_1 = Sub_cbf_v2_527.getLatestMessage(&b_varargout_2);
 
   // Outputs for Enabled SubSystem: '<S11>/Enabled Subsystem' incorporates:
   //   EnablePort: '<S18>/Enable'
 
   if (b_varargout_1) {
-    cbf_v2_B.In1 = cbf_v2_B.BusAssignment2;
+    cbf_v2_B.In1_f = b_varargout_2;
   }
 
   // End of MATLABSystem: '<S11>/SourceBlock'
@@ -161,13 +161,13 @@ void cbf_v2_step(void)
   //   MATLABSystem: '<S12>/Get Parameter8'
   //   MATLABSystem: '<S12>/Get Parameter9'
 
-  cbf_v2_B.value = ((((cbf_v2_B.value / value - 1.0) * cbf_v2_B.In1.Linear.X +
+  cbf_v2_B.value = ((((cbf_v2_B.value / value - 1.0) * cbf_v2_B.In1_f.Data +
                       -3.5) + (cbf_v2_B.In1_p.Linear.Z - cbf_v2_B.value *
-    cbf_v2_B.In1.Linear.X) * cbf_v2_B.value_c) + (cbf_v2_B.In1_m.Data -
-    cbf_v2_B.value * cbf_v2_B.In1_h.Linear.X) * cbf_v2_B.value_k) * (value /
+    cbf_v2_B.In1_f.Data) * cbf_v2_B.value_c) + (cbf_v2_B.In1_m.Data -
+    cbf_v2_B.value * cbf_v2_B.In1.Linear.X) * cbf_v2_B.value_k) * (value /
     cbf_v2_B.value);
   value_0 = ((cbf_v2_B.In1_m.Data - value_0) * rtb_minmax3015 + rtb_cmd_accel *
-             cbf_v2_B.In1_p.Linear.Z) + value_1 * -cbf_v2_B.In1.Linear.X;
+             cbf_v2_B.In1_p.Linear.Z) + value_1 * -cbf_v2_B.In1_f.Data;
   if ((cbf_v2_B.value < value_0) || rtIsNaN(value_0)) {
     rtb_cmd_accel = cbf_v2_B.value;
   } else {
@@ -387,7 +387,7 @@ void cbf_v2_initialize(void)
     // SystemInitialize for Outport: '<S15>/Out1' incorporates:
     //   Inport: '<S15>/In1'
 
-    cbf_v2_B.In1_h = cbf_v2_P.Out1_Y0_k;
+    cbf_v2_B.In1 = cbf_v2_P.Out1_Y0_k;
 
     // End of SystemInitialize for SubSystem: '<S8>/Enabled Subsystem'
 
@@ -408,7 +408,7 @@ void cbf_v2_initialize(void)
     // SystemInitialize for Outport: '<S18>/Out1' incorporates:
     //   Inport: '<S18>/In1'
 
-    cbf_v2_B.In1 = cbf_v2_P.Out1_Y0_n;
+    cbf_v2_B.In1_f = cbf_v2_P.Out1_Y0_n;
 
     // End of SystemInitialize for SubSystem: '<S11>/Enabled Subsystem'
 

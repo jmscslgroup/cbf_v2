@@ -7,9 +7,9 @@
 //
 // Code generated for Simulink model 'cbf_v2'.
 //
-// Model version                  : 3.90
+// Model version                  : 3.92
 // Simulink Coder version         : 9.5 (R2021a) 14-Nov-2020
-// C/C++ source code generated on : Wed May  4 19:25:39 2022
+// C/C++ source code generated on : Wed May  4 20:25:57 2022
 //
 // Target selection: ert.tlc
 // Embedded hardware selection: Generic->Unspecified (assume 32-bit Generic)
